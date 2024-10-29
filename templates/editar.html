@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Inscrito</title>
+</head>
+<body>
+    <h1>Editar inscrito</h1>
+    <form action="{{url_for('editar',id=inscrito.id)}}" method="POST">
+        <h2>Datos</h2>
+        Fecha: <input type="date" name="fecha" id="fecha" required"><br>
+        Nombre:<input type="text" name="nombre" value="{{inscrito['nombre']}}" required><br>
+        Apellidos:<input type="text" name="apellidos" value="{{inscrito['apellidos']}}" required><br>
+        <div>
+            Turno: 
+            <input type="radio" id="turno_mañana" name="turno" value="Mañana" required>
+            <label for="turno_mañana">Mañana</label>
+            <input type="radio" id="turno_tarde" name="turno" value="Tarde" required>
+            <label for="turno_tarde">Tarde</label>
+            <input type="radio" id="turno_noche" name="turno" value="Noche" required>
+            <label for="turno_noche">Noche</label>
+            
+        </div>
+        <div>
+            <h2>Seminarios Disponibles</h2>
+            <input type="checkbox" id="seminario_ai" name="seminarios" value="Inteligencia Articial">
+            <label for="seminario_ai">Inteligencia Artificial</label><br>
+            <input type="checkbox" id="seminario_ml" name="seminarios" value="Machine Learning">
+            <label for="seminario_ml">Machine Learning</label><br>
+            <input type="checkbox" id="seminario_sa" name="seminarios" value="Simulacion con Arena">
+            <label for="seminario_sa">Simulacion con Arena</label><br>
+            <input type="checkbox" id="seminario_re" name="seminarios" value="Robotica Educativa">
+            <label for="seminario_re">Robotica Educativa</label><br>
+        </div>
+        <input type="submit">
+    </form>
+</body>
+</html>
